@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Answer {
+struct Answer: Decodable {
   let id: String
   let headline: String
   let codeSnippet: String

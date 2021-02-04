@@ -1,0 +1,118 @@
+[
+  {
+    "id": "ans1",
+    "headline": "You should use the @GestureState property wrapper, like this:",
+    "codeSnippet": "@GestureState private var dragAmount = CGSize.zero",
+    "description": "Although you could also use @State for this purpose, @GestureState is significantly more efficient.",
+    "shortDescription": "@GestureState, for tracking an active user gesture.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-gesturestate-property-wrapper"
+  },
+  
+  {
+    "id": "ans2",
+    "headline": "You should use the @State property wrapper, like this:",
+    "codeSnippet": "@State private var username = \"Taylor\"",
+    "description": "Technically there's nothing stopping you from using @State to store a class instance, but you wouldn't get notified of any changes so it's best to avoid this.",
+    "shortDescription": "@State, for storing regular value.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-state-property-wrapper"
+  },
+  
+  {
+    "id": "ans3",
+    "headline": "You should use the @Binding property wrapper.",
+    "codeSnippet": "@Binding var username: String",
+    "description": "Using @Binding means you'll need to pass the value into the view from somewhere else, but any changes you make to the value will be reflected in the original value too.",
+    "shortDescription": "@Binding, for storing passed value from somewhere else",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-binding-property-wrapper"
+  },
+  
+  {
+    "id": "ans4",
+    "headline": "You don't need a property wrapper here, and can use a regular property instead. For example:",
+    "codeSnippet": "let username: String",
+    "description": null,
+    "shortDescription": "Swift Property, for using constant value.",
+    "learnMore": "https://www.hackingwithswift.com/read/0/17/properties"
+  },
+  
+  {
+    "id": "ans5",
+    "headline": "You should use the @StateObject property wrapper, like this:",
+    "codeSnippet": "@StateObject private var user = User()",
+    "description": "Using @StateObject rather than @ObservedObject is important, because it tells SwiftUI your view owns the object. This will stop SwiftUI from accidentally destroying the object if your view is recreated.",
+    "shortDescription": "@StateObject, for creating the object of class locally in the view",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-stateobject-property-wrapper"
+  },
+  
+  {
+    "id": "ans6",
+    "headline": "You should use the @EnvironmentObject property wrapper, like this:",
+    "codeSnippet": "@EnvironmentObject var user: User",
+    "description": "Important: if you fail to provide the object in the environment your app will crash.",
+    "shortDescription": "@EnvironmentObject, for using any object from SwiftUI environment",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-environmentobject-property-wrapper"
+  },
+  
+  {
+    "id": "ans7",
+    "headline": "You should use the @ObservedObject property wrapper, like this:",
+    "codeSnippet": "@ObservedObject var user: User",
+    "description": "Using @ObservedObject rather than @StateObject is important, because it tells SwiftUI your view wants to be notified of changes without owning the object.",
+    "shortDescription": "@ObservedObject, for using any object which is passed as a parameter",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-observedobject-property-wrapper"
+  },
+  
+  {
+    "id": "ans8",
+    "headline": "",
+    "codeSnippet": "",
+    "description": null,
+    "shortDescription": "@AppStorage, for reading and writing data in UserDefaults.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-appstorage-property-wrapper"
+  },
+  
+  {
+    "id": "ans9",
+    "headline": "",
+    "codeSnippet": "",
+    "description": null,
+    "shortDescription": "@Environment, for working with environment data that comes from SwiftUI.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-environment-property-wrapper"
+  },
+  
+  {
+    "id": "ans10",
+    "headline": "",
+    "codeSnippet": "",
+    "description": null,
+    "shortDescription": "@FetchRequest, for reading Core Data objects.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-fetchrequest-property-wrapper"
+  }  ,
+  
+  {
+    "id": "ans11",
+    "headline": "",
+    "codeSnippet": "",
+    "description": null,
+    "shortDescription": "@Published, for automatically announcing changes to properties in observable objects.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-published-property-wrapper"
+  }  ,
+  
+  {
+    "id": "ans12",
+    "headline": "",
+    "codeSnippet": "",
+    "description": null,
+    "shortDescription": "@ScaledMetric, for adjusting a size based on the user's device settings.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-scaledmetric-property-wrapper"
+  }  ,
+  
+  {
+    "id": "ans13",
+    "headline": "",
+    "codeSnippet": "",
+    "description": null,
+    "shortDescription": "@SceneStorage, for reading and writing data that belongs to the current scene.",
+    "learnMore": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-scenestorage-property-wrapper"
+  }    
+]

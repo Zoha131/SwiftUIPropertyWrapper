@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		899D45BC25CB733400F5118D /* SwiftUI_Property_WrapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45BB25CB733400F5118D /* SwiftUI_Property_WrapperApp.swift */; };
-		899D45BE25CB733400F5118D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45BD25CB733400F5118D /* ContentView.swift */; };
+		899D45BC25CB733400F5118D /* SPWApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45BB25CB733400F5118D /* SPWApp.swift */; };
+		899D45BE25CB733400F5118D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45BD25CB733400F5118D /* HomeScreen.swift */; };
 		899D45C025CB733400F5118D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899D45BF25CB733400F5118D /* Assets.xcassets */; };
 		899D45CD25CB75D600F5118D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45CC25CB75D600F5118D /* Color+Extension.swift */; };
 		899D45D225CB7A5C00F5118D /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45D125CB7A5C00F5118D /* Line.swift */; };
@@ -16,12 +16,17 @@
 		899D45DA25CB872500F5118D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45D925CB872500F5118D /* Question.swift */; };
 		899D45DE25CB873200F5118D /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45DD25CB873200F5118D /* Answer.swift */; };
 		899D45E125CB87B400F5118D /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45E025CB87B400F5118D /* Option.swift */; };
+		899D45EA25CB957F00F5118D /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 899D45E825CB957F00F5118D /* questions.json */; };
+		899D45EB25CB957F00F5118D /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = 899D45E925CB957F00F5118D /* answers.json */; };
+		899D45EE25CB978A00F5118D /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45ED25CB978A00F5118D /* OptionView.swift */; };
+		899D45F625CB9BEC00F5118D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45F525CB9BEC00F5118D /* HomeViewModel.swift */; };
+		899D45FB25CB9C5B00F5118D /* SPWRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D45FA25CB9C5B00F5118D /* SPWRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		899D45B825CB733400F5118D /* SwiftUI Property Wrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Property Wrapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		899D45BB25CB733400F5118D /* SwiftUI_Property_WrapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Property_WrapperApp.swift; sourceTree = "<group>"; };
-		899D45BD25CB733400F5118D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		899D45BB25CB733400F5118D /* SPWApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPWApp.swift; sourceTree = "<group>"; };
+		899D45BD25CB733400F5118D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		899D45BF25CB733400F5118D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899D45C425CB733400F5118D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		899D45CC25CB75D600F5118D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -30,6 +35,11 @@
 		899D45D925CB872500F5118D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		899D45DD25CB873200F5118D /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		899D45E025CB87B400F5118D /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		899D45E825CB957F00F5118D /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		899D45E925CB957F00F5118D /* answers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers.json; sourceTree = "<group>"; };
+		899D45ED25CB978A00F5118D /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		899D45F525CB9BEC00F5118D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		899D45FA25CB9C5B00F5118D /* SPWRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPWRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +72,12 @@
 		899D45BA25CB733400F5118D /* SwiftUI Property Wrapper */ = {
 			isa = PBXGroup;
 			children = (
+				899D45F825CB9C4200F5118D /* Data */,
+				899D45F025CB9B6300F5118D /* UI */,
 				899D45D825CB871900F5118D /* Model */,
-				899D45D025CB7A4E00F5118D /* View */,
 				899D45CB25CB75AB00F5118D /* Extension */,
 				899D45E325CB940800F5118D /* Resource */,
-				899D45BB25CB733400F5118D /* SwiftUI_Property_WrapperApp.swift */,
-				899D45BD25CB733400F5118D /* ContentView.swift */,
+				899D45BB25CB733400F5118D /* SPWApp.swift */,
 				899D45C425CB733400F5118D /* Info.plist */,
 			);
 			path = "SwiftUI Property Wrapper";
@@ -81,13 +91,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		899D45D025CB7A4E00F5118D /* View */ = {
+		899D45D025CB7A4E00F5118D /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				899D45D125CB7A5C00F5118D /* Line.swift */,
 				899D45D525CB81A500F5118D /* SPWButton.swift */,
+				899D45ED25CB978A00F5118D /* OptionView.swift */,
 			);
-			path = View;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		899D45D825CB871900F5118D /* Model */ = {
@@ -103,9 +114,37 @@
 		899D45E325CB940800F5118D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				899D45E925CB957F00F5118D /* answers.json */,
+				899D45E825CB957F00F5118D /* questions.json */,
 				899D45BF25CB733400F5118D /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		899D45F025CB9B6300F5118D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				899D45F325CB9B8D00F5118D /* Home */,
+				899D45D025CB7A4E00F5118D /* Component */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		899D45F325CB9B8D00F5118D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				899D45BD25CB733400F5118D /* HomeScreen.swift */,
+				899D45F525CB9BEC00F5118D /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		899D45F825CB9C4200F5118D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				899D45FA25CB9C5B00F5118D /* SPWRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				899D45C025CB733400F5118D /* Assets.xcassets in Resources */,
+				899D45EB25CB957F00F5118D /* answers.json in Resources */,
+				899D45EA25CB957F00F5118D /* questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,12 +219,15 @@
 			files = (
 				899D45E125CB87B400F5118D /* Option.swift in Sources */,
 				899D45D625CB81A500F5118D /* SPWButton.swift in Sources */,
-				899D45BE25CB733400F5118D /* ContentView.swift in Sources */,
+				899D45BE25CB733400F5118D /* HomeScreen.swift in Sources */,
+				899D45F625CB9BEC00F5118D /* HomeViewModel.swift in Sources */,
 				899D45D225CB7A5C00F5118D /* Line.swift in Sources */,
 				899D45DE25CB873200F5118D /* Answer.swift in Sources */,
 				899D45DA25CB872500F5118D /* Question.swift in Sources */,
 				899D45CD25CB75D600F5118D /* Color+Extension.swift in Sources */,
-				899D45BC25CB733400F5118D /* SwiftUI_Property_WrapperApp.swift in Sources */,
+				899D45FB25CB9C5B00F5118D /* SPWRepository.swift in Sources */,
+				899D45EE25CB978A00F5118D /* OptionView.swift in Sources */,
+				899D45BC25CB733400F5118D /* SPWApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

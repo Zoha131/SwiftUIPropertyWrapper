@@ -1,0 +1,109 @@
+[
+  {
+    "id" : "qs1",
+    "number": 1,
+    "text": "Are you storing a struct, an enum, or a class?",
+    "options": [
+      {
+        "text": "I want to store a struct or an enum.",
+        "questionID": "qs2",
+        "answerID": null
+      },
+      {
+        "text": "I want to store a class.",
+        "questionID": "qs5",
+        "answerID": null
+      }
+    ]
+  },
+  
+  {
+    "id" : "qs2",
+    "number": 2,
+    "text": "Will the value change over time?",
+    "options": [
+      {
+        "text": "Yes, it will change as my app runs.",
+        "questionID": "qs3",
+        "answerID": null
+      },
+      {
+        "text": "No, it won't change.",
+        "questionID": null,
+        "answerID": "ans4"
+      }
+    ]
+  },
+  
+  {
+    "id" : "qs3",
+    "number": 3,
+    "text": "Are you creating the value in your view, or will it be passed in from somewhere else?",
+    "options": [
+      {
+        "text": "I'll be creating the value locally in my view.",
+        "questionID": "qs4",
+        "answerID": null
+      },
+      {
+        "text": "I'll be passing in the value from somewhere else.",
+        "questionID": null,
+        "answerID": "ans3"
+      }
+    ]
+  },
+  
+  {
+    "id" : "qs4",
+    "number": 4,
+    "text": "Is the property being used to track an active user gesture?",
+    "options": [
+      {
+        "text": "Yes, this is for a gesture.",
+        "questionID": null,
+        "answerID": "ans1"
+      },
+      {
+        "text": "No, this is just a regular value.",
+        "questionID": null,
+        "answerID": "ans2"
+      }
+    ]
+  },
+  
+  {
+    "id" : "qs5",
+    "number": 2,
+    "text": "Is it an object you're creating locally in your view, or will it be created somewhere else and passed in to your view?",
+    "options": [
+      {
+        "text": "I'm creating the object locally in my view.",
+        "questionID": null,
+        "answerID": "ans5"
+      },
+      {
+        "text": "The object will be passed in from somewhere else.",
+        "questionID": "qs6",
+        "answerID": null
+      }
+    ]
+  },
+  
+  {
+    "id" : "qs6",
+    "number": 3,
+    "text": "Will the object be in the SwiftUI environment, or do you want to pass it in manually?",
+    "options": [
+      {
+        "text": "The object will be in the SwiftUI environment.",
+        "questionID": null,
+        "answerID": "ans6"
+      },
+      {
+        "text": "I want to pass it in manually as a parameter.",
+        "questionID": null,
+        "answerID": "ans7"
+      }
+    ]
+  }
+]

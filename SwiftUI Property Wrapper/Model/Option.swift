@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Option {
+struct Option: Decodable {
   let text: String
-  let qeustionID: String?
+  let questionID: String?
   let answerID: String?
 }
