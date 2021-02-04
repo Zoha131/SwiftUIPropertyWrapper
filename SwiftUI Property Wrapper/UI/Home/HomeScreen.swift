@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-  @State private var showResult = false
-  @ObservedObject private var viewModel = HomeViewModel()
+  @StateObject private var viewModel = HomeViewModel()
 
   var body: some View {
     NavigationView {
@@ -17,73 +16,110 @@ struct HomeScreen: View {
         Color.background.edgesIgnoringSafeArea(.all)
 
         VStack(alignment: .leading) {
-          HStack(alignment:.firstTextBaseline, spacing:1) {
-            Text("Question \(viewModel.currentQsNumber)")
-              .font(.title)
-              .fontWeight(.bold)
+          if let answer = viewModel.currentAnswer {
+            Text(answer.headline)
+              .padding(.bottom)
 
-            Text(" / n")
+            HStack {
+              Text(answer.codeSnippet)
 
-            Spacer()
-          }
-          .foregroundColor(.grayText)
+              Spacer()
+            }
+            .padding()
+            .background(
+              RoundedRectangle(cornerRadius: 16)
+                .strokeBorder(Color.grayText, lineWidth: 3)
+            )
 
-          Line().frame(height: 2)
+            if let description = answer.description {
+              Text(description)
+                .padding(.top)
+            }
+          } else {
+            VStack(alignment: .leading) {
+              HStack(alignment:.firstTextBaseline, spacing:1) {
+                Text("Question \(viewModel.currentQsNumber)")
+                  .font(.title)
+                  .fontWeight(.bold)
 
-          ZStack {
-            Text(viewModel.setAQuestion.text)
-              .font(.title2)
-              .fontWeight(.semibold)
-              .padding(.top)
-              .offset(x: viewModel.setAOffsets[0])
-              .opacity(viewModel.setAOpacity[0])
+                Text(" / n")
 
-            Text(viewModel.setBQuestion.text)
-              .font(.title2)
-              .fontWeight(.semibold)
-              .padding(.top)
-              .offset(x: viewModel.setBOffsets[0])
-              .opacity(viewModel.setBOpacity[0])
+                Spacer()
+              }
+              .foregroundColor(.grayText)
+
+              Line().frame(height: 2)
+
+              ZStack(alignment: .leading) {
+                Text(viewModel.setAQuestion.text)
+                  .font(.title2)
+                  .fontWeight(.semibold)
+                  .multilineTextAlignment(.leading)
+                  .padding(.top)
+                  .offset(x: viewModel.setAOffsets[0])
+                  .opacity(viewModel.setAOpacity[0])
+
+                Text(viewModel.setBQuestion.text)
+                  .font(.title2)
+                  .fontWeight(.semibold)
+                  .multilineTextAlignment(.leading)
+                  .padding(.top)
+                  .offset(x: viewModel.setBOffsets[0])
+                  .opacity(viewModel.setBOpacity[0])
+              }
+
+              Spacer()
+
+              ZStack {
+                VStack(spacing: 30) {
+                  ForEach(0..<2){ id in
+                    let option = viewModel.setAQuestion.options[id]
+
+                    OptionView(
+                      action: { viewModel.select(option: option) },
+                      title: option.text
+                    )
+                    .offset(x: viewModel.setAOffsets[id + 1])
+                    .opacity(viewModel.setAOpacity[id + 1])
+                  }
+                }
+
+                VStack(spacing: 30) {
+                  ForEach(0..<2){ id in
+                    let option = viewModel.setBQuestion.options[id]
+
+                    OptionView(
+                      action: { viewModel.select(option: option) },
+                      title: option.text
+                    )
+                    .offset(x: viewModel.setBOffsets[id + 1])
+                    .opacity(viewModel.setBOpacity[id + 1])
+                  }
+                }
+              }
+              .padding(.bottom, 48)
+            }
           }
 
           Spacer()
 
-          ZStack {
-            VStack(spacing: 30) {
-              ForEach(0..<2){ id in
-                let option = viewModel.setAQuestion.options[id]
-
-                OptionView(
-                  action: { viewModel.select(option: option) },
-                  title: option.text
-                )
-                .offset(x: viewModel.setAOffsets[id + 1])
-                .opacity(viewModel.setAOpacity[id + 1])
-              }
-            }
-
-            VStack(spacing: 30) {
-              ForEach(0..<2){ id in
-                let option = viewModel.setBQuestion.options[id]
-
-                OptionView(
-                  action: { viewModel.select(option: option) },
-                  title: option.text
-                )
-                .offset(x: viewModel.setBOffsets[id + 1])
-                .opacity(viewModel.setBOpacity[id + 1])
-              }
-            }
-          }
-          .padding(.bottom, 48)
-
           HStack {
+            SPWButton(
+              action: {
+                if let learnMore = viewModel.currentAnswer?.learnMore,
+                   let url = URL(string: learnMore){
+                  UIApplication.shared.open(url)
+                }
+              },
+              title: "Learn More",
+              color: .pink
+            )
+            .offset(y: viewModel.currentAnswer != nil ? 0 : 200)
+
             Spacer()
 
-            SPWButton(action: {}, title: "Start Again")
-              .offset(y: showResult ? 0 : 200)
-
-            Spacer()
+            SPWButton(action: viewModel.startAgain, title: "Start Again")
+              .offset(y: viewModel.currentAnswer != nil ? 0 : 200)
           }
         }
         .foregroundColor(.white)

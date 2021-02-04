@@ -20,6 +20,7 @@ class HomeViewModel: ObservableObject {
   @Published private(set) var setBOpacity = [Double](repeating: 0.0, count: 3)
 
   @Published private(set) var currentQsNumber = 1
+  @Published private(set) var currentAnswer: Answer? = nil
 
   init() {
     questions = SPWRepository.loadQuestions()
@@ -95,7 +96,19 @@ class HomeViewModel: ObservableObject {
     }
 
     if let answerID = option.answerID {
+      withAnimation(.easeOut) {
+        currentAnswer = answers[answerID]!
+      }
+    }
+  }
 
+  func startAgain() {
+    withAnimation(.easeIn){
+      setAQuestion = questions["qs1"]!
+      setBQuestion = questions["qs1"]!
+
+      currentQsNumber = 1
+      currentAnswer = nil
     }
   }
 }

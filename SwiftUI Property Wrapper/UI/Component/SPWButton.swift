@@ -10,6 +10,7 @@ import SwiftUI
 struct SPWButton: View {
   var action: () -> Void
   var title: String
+  var color: Color = .button
 
   var body: some View {
     Button(action: action) {
@@ -25,7 +26,7 @@ struct SPWButton: View {
           let frame = gr.frame(in: .local)
 
           ZStack(alignment: .leading) {
-            Color.button
+            color
 
             Circle()
               .fill(Color.white.opacity(0.1))
