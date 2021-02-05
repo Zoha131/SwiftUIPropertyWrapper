@@ -9,9 +9,12 @@ import SwiftUI
 
 struct HomeScreen: View {
   @StateObject private var viewModel = HomeViewModel()
+  @State private var showInfo = false
 
-  init() {
-    UINavigationBar.appearance().backgroundColor = .clear
+  func visitWebpage() {
+    if let url = URL(string: "https://www.hackingwithswift.com/articles/227/which-swiftui-property-wrapper"){
+      UIApplication.shared.open(url)
+    }
   }
 
   var body: some View {
@@ -129,17 +132,25 @@ struct HomeScreen: View {
         .foregroundColor(.white)
         .padding(.all, 32)
       }
+      .alert(isPresented: $showInfo){
+
+        Alert(
+          title: Text("SwiftUI Property Wrapper"),
+          message: Text("This app is an iOS version of a webpage by Paul Hudson"),
+          primaryButton: .default(Text("Visit Webpage"), action: visitWebpage),
+          secondaryButton: .cancel()
+        )
+      }
       .navigationBarTitleDisplayMode(.inline)
       .navigationBarColor(backgroundColor: .background, tintColor: .grayText)
       .navigationBarItems(
         leading: NavigationLink(destination: AllWrapperScreen()){
           Image(systemName: "list.bullet")
-            .foregroundColor(.grayText)
+        },
+        trailing: Button(action: { showInfo.toggle() }){
+          Image(systemName: "info.circle")
         }
       )
-      .onAppear {
-        UINavigationBar.appearance().backgroundColor = UIColor(Color.background)
-      }
     }
   }
 }
