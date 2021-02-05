@@ -10,6 +10,10 @@ import SwiftUI
 struct HomeScreen: View {
   @StateObject private var viewModel = HomeViewModel()
 
+  init() {
+    UINavigationBar.appearance().backgroundColor = .clear
+  }
+
   var body: some View {
     NavigationView {
       ZStack {
@@ -124,6 +128,17 @@ struct HomeScreen: View {
         }
         .foregroundColor(.white)
         .padding(.all, 32)
+      }
+      .navigationBarTitleDisplayMode(.inline)
+      .navigationBarColor(backgroundColor: .background, tintColor: .grayText)
+      .navigationBarItems(
+        leading: NavigationLink(destination: AllWrapperScreen()){
+          Image(systemName: "list.bullet")
+            .foregroundColor(.grayText)
+        }
+      )
+      .onAppear {
+        UINavigationBar.appearance().backgroundColor = UIColor(Color.background)
       }
     }
   }
